@@ -1,7 +1,7 @@
 FROM ubuntu:latest	
-	RUN add-apt-repository ppa:openjdk-r/ppa
+	RUN rm -rf /var/lib/apt/lists/*
 	RUN apt-get -y update 
-	RUN apt-get install openjdk-8-jdk
+	RUN apt install openjdk-8-jdk 
 	RUN mkdir /usr/local/tomcat
 	RUN wget https://apache.claz.org/tomcat/tomcat-9/v9.0.36/bin/apache-tomcat-9.0.36.tar.gz -O /tmp/tomcat.tar.gz
 	RUN cd /tmp && tar xvfz tomcat.tar.gz

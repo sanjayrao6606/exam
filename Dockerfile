@@ -1,6 +1,6 @@
 FROM centos:latest	
 	RUN rm -rf /var/lib/apt/lists/*
-	RUN yum -y update 
+	RUN dnf clean all && rm -r /var/cache/dnf  && dnf upgrade -y && dnf update -y 
 	RUN yum install openjdk-8-jdk 
 	RUN mkdir /usr/local/tomcat
 	RUN wget https://apache.claz.org/tomcat/tomcat-9/v9.0.36/bin/apache-tomcat-9.0.36.tar.gz -O /tmp/tomcat.tar.gz

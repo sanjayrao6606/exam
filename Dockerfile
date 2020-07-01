@@ -1,5 +1,4 @@
 FROM ubuntu:latest	
-	RUN rm -rf /var/lib/apt/lists/*
 	RUN add-apt-repository ppa:openjdk-r/ppa
 	RUN apt-get -y update 
 	RUN apt-get install openjdk-8-jdk
